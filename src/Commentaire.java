@@ -1,9 +1,21 @@
 
 public class Commentaire extends Information{
 	
-	public Information reference; 
+	private Information reference; 
 	
-	public String toString(){		
-		return (emetteur.toString()+"a écrit"+message+"en réponse à"+reference.emetteur.toString());
+	
+	//GETTERS & SETTERS
+	public Information getReference() {
+		return reference;
 	}
+
+	public void setReference(Information reference) {
+		this.reference = reference;
+	}
+	
+	//METHODES
+	public String toString(){		
+		return (super.toString()+"  TO:  "+reference.getEmetteur().getSurnom());
+	}
+	
 }
